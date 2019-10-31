@@ -1,4 +1,4 @@
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: pocean-core
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/pyoceans/pocean-core/archive/{{ version }}.tar.gz
-  sha256: c11dfb3dd73aff4600d9eec03c8fa15e86738cee1509d57880070501baadea9b
+  sha256: 1d42f56e66c9b0cd418d2ce8028529d627d32d1a628dea2b11509cc105055e9f
 
 build:
   number: 0
