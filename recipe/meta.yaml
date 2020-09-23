@@ -1,4 +1,4 @@
-{% set version = "1.9.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: pocean-core
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/pyoceans/pocean-core/archive/{{ version }}.tar.gz
-  sha256: 31be70e352da4478f04c993cacf0434cfa97f217ca8574a14e9ec416f0f05224
+  sha256: 8a470b91b060dccd385406cdfcb52e671c701da0e57c1c48c9da0b3f93ad18ae
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -46,7 +46,7 @@ about:
   home: https://github.com/axiom-data-science/pocean-core
   license: MIT
   license_file: LICENSE.txt
-  summary: 'A python framework for working with met-ocean data.'
+  summary: A python framework for working with met-ocean data.
 
 extra:
   recipe-maintainers:
