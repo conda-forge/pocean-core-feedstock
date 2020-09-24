@@ -5,7 +5,7 @@ Home: https://github.com/axiom-data-science/pocean-core
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A python framework for working with met-ocean data.
 
