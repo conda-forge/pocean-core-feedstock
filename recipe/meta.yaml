@@ -15,18 +15,21 @@ build:
 
 requirements:
   host:
-    - python >=3.6,<4.0
+    - python >=3.7,<4.0
+    - setuptools >=42
+    - setuptools-scm >=3.4
+    - wheel
     - pip
   run:
-    - python >=3.6,<4.0
+    - python >=3.7,<4.0
+    - cftime >=1.2.1
     - netcdf4
-    - numpy >=1.15
+    - numpy >=1.20
     - pandas >=1.0.5
     - python-dateutil
     - pytz
-    - shapely
+    - shapely >=1.8
     - simplejson
-    - cftime >=1.2.1
 
 test:
   source_files:
