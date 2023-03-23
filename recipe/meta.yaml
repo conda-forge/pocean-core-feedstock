@@ -1,38 +1,41 @@
-{% set version = "3.0.0" %}
+{% set name = "pocean-core" %}
+{% set version = "3.1.0" %}
 
 package:
-  name: pocean-core
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/pyoceans/pocean-core/archive/{{ version }}.tar.gz
-  sha256: 614d212eee36f8dad43cddfd339d6794c30cce305700d76c9cc47bef1af1919f
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pocean-core-{{ version }}.tar.gz
+  sha256: faf9b27c2a1acb76636134461c42eb6767327bf419fae585d821920c3e883509
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python >=3.6,<4.0
+    - python >=3.7,<4.0
+    - setuptools >=42
+    - setuptools-scm >=3.4
+    - wheel
     - pip
   run:
-    - python >=3.6,<4.0
+    - python >=3.7,<4.0
+    - cftime >=1.2.1
     - netcdf4
-    - numpy >=1.15
+    - numpy >=1.20
     - pandas >=1.0.5
     - python-dateutil
     - pytz
-    - shapely
+    - shapely >=1.8
     - simplejson
-    - cftime >=1.2.1
 
 test:
   source_files:
     - pocean
   requires:
-    - pytest
     - pip
   imports:
     - pocean
@@ -40,7 +43,6 @@ test:
     - pocean.grid
   commands:
     - pip check
-    - pytest -s -rxs -v pocean
 
 about:
   home: https://github.com/axiom-data-science/pocean-core
