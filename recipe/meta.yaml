@@ -1,13 +1,13 @@
 {% set name = "pocean-core" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pocean-core-{{ version }}.tar.gz
-  sha256: faf9b27c2a1acb76636134461c42eb6767327bf419fae585d821920c3e883509
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: efa98f35689cc4de0f4800e7dadbe34aef7d6b89e66f0ecd5a6fa6d82f74ce65
 
 build:
   noarch: python
