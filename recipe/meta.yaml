@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: efa98f35689cc4de0f4800e7dadbe34aef7d6b89e66f0ecd5a6fa6d82f74ce65
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=42
     - setuptools-scm >=3.4
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - cftime >=1.2.1
     - netcdf4
     - numpy >=1.20
@@ -37,6 +37,7 @@ test:
     - pocean
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - pocean
     - pocean.dsg
