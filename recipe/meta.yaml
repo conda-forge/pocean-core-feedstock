@@ -1,5 +1,5 @@
 {% set name = "pocean-core" %}
-{% set version = "3.2.1" %}
+{% set version = "2025.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2acae89d365d0b134da980cf84d4e928d4d8d841c52be4aa72d3cd43e292dac4
+  sha256: 7f771a9a7879ef5191e6882a744e4a475e668b277e5ea99b6fd263ba7323b143
 
 build:
   noarch: python
